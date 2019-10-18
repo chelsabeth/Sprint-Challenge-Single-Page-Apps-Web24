@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"; 
+import CharacterCard from "./CharacterCard";
+import { Container, Row, Col} from "reactstrap";
 
 
-export default function CharacterList() {
+const CharacterList = () => {
   // TODO: Add useState to track data from useEffect
   const [list, setList] = useState([]);
   useEffect(() => {
@@ -13,25 +15,37 @@ export default function CharacterList() {
         .get("https://rickandmortyapi.com/api/character/") 
         .then(response => {
           const list = response.data.results;
-          console.log("Character Data", response);
+          console.log("Character Data", response.data.results);
           setList(list);
         })
         .catch(error => {
-          console.log("Sorry, an error has occured", err);
+          console.log("Sorry, an error has occured", error);
         });
     };
     recieveList();
   }, []);
 
   return (
-    <section className="character-list">
-      <h2>TODO: `array.map()` over your state here!</h2>
+    <div className="character-list">
+      <Container>
+      <Row>
+      <Col>
+      {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       {list.map(character => {
         return (
-
+          <CharacterCard
+          key={character.id}
+          image={character.image}
+          name={character.name}
+          status={character.status}
+          species={character.species}
+          />
         )
       })}
-    </section>
+      </Col>
+      </Row>
+      </Container>
+    </div>
   );
 }
 
