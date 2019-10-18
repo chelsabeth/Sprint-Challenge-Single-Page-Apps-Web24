@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import axios from "axios"; 
 import CharacterCard from "./CharacterCard";
 import { Container, Row, Col } from "reactstrap";
-import App from "../App";
 
 
-const CharacterList = props => {
+const CharacterList = () => {
   // TODO: Add useState to track data from useEffect
   const [list, setList] = useState([]);
+  const [filter, setFilter] = useState("");
 
   useEffect(() => {
      // TODO: Add API Request here - must run in `useEffect`
@@ -27,14 +27,32 @@ const CharacterList = props => {
     recieveList();
   }, []);
 
+  const filterChange = event => {
+    event.preventDefault();
+    setFilter(event.target.value);
+  }
+
   return (
     <div className="character-list">
+      <form className="search">
+        <input
+          type="text"
+          onChange={filterChange}
+          value={filter}
+          name="name"
+          tabIndex="0"
+          className="prompt search-name"
+          placeholder="search by name"
+          autoComplete="off"
+        />
+      </form>
+      <input name="filter" value={filter} onChange={filterChange}></input>
       <Container>
       <Row>
       <Col>
       {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       {list.map(character => {
-        if (character.name.toLowerCase().includes(props.filter.toLowerCase())) {
+        if (character.name.toLowerCase().includes(filter.toLowerCase())) {
           return (
             <CharacterCard
             key={character.id}
