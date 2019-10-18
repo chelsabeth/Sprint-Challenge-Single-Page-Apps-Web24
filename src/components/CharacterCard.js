@@ -12,8 +12,8 @@ const CharacterCard = (props) => {
   return (
     <div>
       <Col>
-     <Card className="character-card" outline color="warning">
-        <CardImg top width="25%" src={props.image} alt="character" />
+     <Card className="character-card">
+        <CardImg top width="25%" src={props.image} alt="image of Character" />
         <CardBody>
         <CardTitle>Name: {props.name}</CardTitle>
         <CardText>Status: {props.status}</CardText>
