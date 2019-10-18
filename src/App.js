@@ -13,8 +13,9 @@ export default function App() {
       <Header />
       {/* <CharacterList filter={filter}/> */}
       {/* <input name="filter" value={filter} onChange={filterChange}></input> */}
+      {/* <CharacterList/> */}
       <Route exact path="/" component={WelcomePage}/>
-      <Route path="/characters" charList={<CharacterList/>}/>
+      <Route path="/characters" component={CharacterList}/>
     </main>
   )
 }

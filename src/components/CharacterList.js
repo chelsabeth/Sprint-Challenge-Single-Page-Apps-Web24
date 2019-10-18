@@ -46,7 +46,6 @@ const CharacterList = () => {
           autoComplete="off"
         />
       </form>
-      <input name="filter" value={filter} onChange={filterChange}></input>
       <Container>
       <Row>
       <Col>
