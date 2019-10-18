@@ -7,13 +7,14 @@ import WelcomePage from "./components/WelcomePage";
 
 
 
+
 export default function App() {
   return (
     <main>
       <Header />
       {/* <CharacterList /> */}
-      <Route exact path="/" WelcomePage={WelcomePage}/>
-      <Route path="/characters" CharacterList={CharacterList}/>
+      <Route exact path="/" component={WelcomePage}/>
+      <Route path="/characters" component={CharacterList}/>
     </main>
   );
 }
