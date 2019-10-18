@@ -25,9 +25,9 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [X]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Makes a better user experience because there is no load time/refresh between each page of an applicaation. Everything is ran in the browser, so it makes for faster load time overall 
 
 ## Project Set Up
 
