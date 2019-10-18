@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 import App from "../App";
 
 
-const CharacterList = () => {
+const CharacterList = props => {
   // TODO: Add useState to track data from useEffect
   const [list, setList] = useState([]);
 
@@ -34,8 +34,7 @@ const CharacterList = () => {
       <Col>
       {/* <h2>TODO: `array.map()` over your state here!</h2> */}
       {list.map(character => {
-        console.log(App.filter.name)
-        if (character.name.toLowerCase.includes(App.filter.name.toLowerCase)) {
+        if (character.name.toLowerCase().includes(props.filter.toLowerCase())) {
           return (
             <CharacterCard
             key={character.id}

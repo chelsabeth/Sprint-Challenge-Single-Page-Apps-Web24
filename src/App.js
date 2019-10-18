@@ -17,10 +17,10 @@ export default function App() {
   return (
     <main>
       <Header />
-      {/* <CharacterList /> */}
+      <CharacterList filter={filter}/>
       <input name="filter" value={filter} onChange={filterChange}></input>
-      <Route exact path="/" component={WelcomePage}/>
-      <Route path="/characters" cardList={CharacterList} filter={filter}/>
+      {/* <Route exact path="/" component={WelcomePage}/>
+      <Route path="/characters" cardList={CharacterList} filter={filter}/> */}
     </main>
   );
 }
